@@ -1,0 +1,61 @@
+<div class="row step-header">
+  <div class="step">step2</div>
+  <div class="small-12 medium-9 columns">
+    {{#view 'top-nav'}}
+      {{partial 'building-nav'}}
+    {{/view}}
+  </div>
+</div>
+
+<div class="content-container">
+  <div class="left-nav jets">
+    <div class="content init-default">
+      <h5>Select preferred number of jets:</h5>
+
+      <div class='button-nav'>
+        {{#each jetOption in jetOptions}}
+          {{#view 'select-button'}}
+            {{#view 'jet-options-nav'}}
+              <button {{action 'selectJetOption' jetOption}} class="small round expand">
+                {{jetOption.jetRange}}
+              </button>
+            {{/view}}
+          {{/view}}
+        {{else}}
+          <p>No jet options available</p>
+        {{/each}}
+      </div>
+
+      <label class="preview">
+        {{input type="checkbox" checked=previewWithPeople}}
+
+        Preview with people
+      </label>
+    </div>
+
+    {{partial 'stepNavJets'}}
+  </div>
+
+  <div class="small-12 medium-9 columns hot-tub-feature">
+    <div class="row row-content">
+      <div class="small-12 medium-9 columns">
+        <div class='shell-cabinet-combo'>
+          {{#if selectedJetOption}}
+            {{#if previewWithPeople}}
+              <img {{bind-attr src=selectedJetOption.peoplePreviewImageUrl alt=selectedJetOption.jetRange}}>
+            {{else}}
+              <img {{bind-attr src=selectedJetOption.imageUrl alt=selectedJetOption.jetRange}}>
+            {{/if}}
+          {{else}}
+            <h3>Select a jet option.</h3>
+          {{/if}}
+
+        </div>
+
+      </div>
+
+      {{render 'my-hot-tub' this}}
+      <p class='step-description'>While other manufacturers typically offer only 20 jets, some ThermoSpas<sup>&reg;</sup> Hot Tubs can be customized with as many as 172! Plus, Thermospas<sup>&reg;</sup> offers the widest selection of hot tub jets, including therapy jets, swirl jets, whirlpool jets, pillow jets, and many more!</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+<div class="row step-header step1">
+  <div class="step">step1</div>
+  <div class="small-12 medium-9 columns">
+    {{#view 'top-nav'}}
+      {{partial 'building-nav'}}
+    {{/view}}
+  </div>
+</div>
+
+<div class="content-container">
+  <div class='left-nav'>
+    <div class="content">
+      <h5>How many people will be using your hot tub?</h5>
+
+      <div class='button-nav'>
+        {{#view 'select-button'}}
+          <button {{action 'selectSize' 3}} class="small round expand">
+            up to 3
+          </button>
+        {{/view}}
+
+        {{#view 'select-button'}}
+          <button {{action 'selectSize' 4}} class="small round expand">
+            up to 4
+          </button>
+        {{/view}}
+
+        {{#view 'select-button'}}
+          <button {{action 'selectSize' 5}} class="small round expand">
+            up to 5
+          </button>
+        {{/view}}
+
+        {{#view 'select-button'}}
+          <button {{action 'selectSize' 6}} class="small round expand">
+            5+
+          </button>
+        {{/view}}
+      </div>
+
+      {{#if selectedSize}}
+        <label class="preview">
+          {{input type="checkbox" checked=previewWithPeople}} Preview with people
+        </label>
+      {{/if}}
+    </div>
+
+    {{partial 'stepNavStart'}}
+  </div>
+
+  <div class="small-12 medium-9 columns hot-tub-feature">
+    {{#if selectedSize}}
+      <div class="list">
+        <ul class="small-block-grid-4">
+          {{#each htModel in validHtModels}}
+            <li>
+              <h4>{{htModel.displayName}}</h4>
+              <h5>{{htModel.series}}</h5>
+              <p class="model-description">{{htModel.description}}</p>
+
+              <div class='shell-cabinet-combo-preview'>
+                <img {{bind-attr src=htModel.defaultShellImageUrl}} class='scc-image'>
+                <img {{bind-attr src=htModel.defaultCabinetImageUrl}} class='scc-image'>
+              </div>
+
+              <div class='clear'>
+              </div>
+
+              <div class='jets-preview'>
+                {{#if previewWithPeople}}
+                  <img {{bind-attr src=htModel.defaultJetPeopleImageUrl}}>
+                {{else}}
+                  <img {{bind-attr src=htModel.defaultJetImageUrl}}>
+                {{/if}}
+              </div>
+
+              {{#button-select klass='model-select'}}
+                <button {{action 'selectModel' htModel}} class="tiny round model-select">
+                  select
+                </button>
+              {{/button-select}}
+            </li>
+          {{else}}
+            <p>No models available</p>
+          {{/each}}
+        </ul>
+      </div>
+    {{else}}
+      <img src="/assets/images/intro.jpg"/>
+    {{/if}}
+  </div>
+</div>

@@ -1,0 +1,160 @@
+<div class="row step-header">
+  <div class="step">step4</div>
+  <div class="small-12 medium-9 columns">
+    {{#view 'top-nav'}}
+      {{partial 'building-nav'}}
+    {{/view}}
+  </div>
+</div>
+
+<div class="content-container">
+  <div class="left-nav options">
+    <div class="content">
+      <h5 class='options-title'>Select options:</h5>
+      <h6 class='options-subtitle'>(roll over for more info)</h6>
+
+      <ul class='ht-options-list'>
+        {{#if htModel.supportsTotalControlTherapy}}
+          {{#ifCond 'group1'}}{{/ifCond}}
+          <li>
+            {{#view 'standard-option'}}
+              {{input type="checkbox" id="totalControlTherapy" checked=isTotalControlTherapy}}
+              <label for="totalControlTherapy">
+                {{foundation-tooltip tool="Total Control Therapy" tip="<img src='/assets/images/tooltips/DYO_Option_TotalControlTherapy.jpg' />Allows each person to independently control the jet intensity of their seating area from a mild, soothing sensation to a powerful, invigorating massage with independent pumps and patented throttle control valve."}}<sup>®</sup>
+              </label>
+            {{/view}}
+          </li>
+        {{/if}}
+
+        {{#if htModel.supportsPillowJet}}
+          {{#ifCond 'group1'}}{{/ifCond}}
+          <li>
+            {{input type="checkbox" id="pillowJets" checked=isPillowJet}}
+            <label for="pillowJets">
+              {{foundation-tooltip tool="Pillow Jet" tip="<img src='/assets/images/tooltips/DYO_Option_PillowJet.jpg' />Hidden behind the industry's most comfortable built-in pillow is a specialized pillow jet designed to massage your neck and shoulders. Plus, easily control the massage intensity with a convenient control valve."}}
+            </label>
+          </li>
+        {{/if}}
+
+        {{#if htModel.supportsStainlessSteelJets}}
+          {{#ifCond 'group1'}}{{/ifCond}}
+          <li>
+            {{#view 'standard-option'}}
+              {{input type="checkbox" id="stainlessSteelJets" checked=isStainlessSteelJets}}
+              <label for="stainlessSteelJets">
+                {{foundation-tooltip tool="Stainless Steel Jets" tip="<img src='/assets/images/tooltips/DYO_Option_StainlessSteelJets.jpg' />Stainless steel jets bring a higher level of elegance and sophistication to your hot tub environment and ensure a lifetime of exceptional durability."}}
+              </label>
+            {{/view}}
+          </li>
+        {{/if}}
+
+        {{#if htModel.supportsIceBucket}}
+          {{#ifCond 'group2'}}{{/ifCond}}
+          <li>
+            {{input type="checkbox" id="iceBucket" checked=isIceBucket}}
+            <label for="iceBucket">
+              {{foundation-tooltip tool="Ice Bucket" tip="<img src='/assets/images/tooltips/DYO_Option_IceBucket.jpg' />The uniquely designed, removable ice bucket keeps your favorite beverages chilled, comes with four built-in cup holders, and can easily be reversed into a convenient serving tray."}}
+            </label>
+          </li>
+        {{/if}}
+
+        {{#if htModel.supportsStereo}}
+          {{#ifCond 'group2'}}{{/ifCond}}
+          <li>
+            {{input type="checkbox" id="stereo" checked=isStereo}}
+            <label for="stereo">
+              {{foundation-tooltip tool="Stereo" tip="<img src='/assets/images/tooltips/DYO_Option_Stereo.jpg' />Enjoy superb sound quality with a deluxe sound system capable of handling iPods, MP3 players, and AM/FM receivers. Options include a built-in control panel, waterproof speakers and a hidden sub woofer."}}
+            </label>
+          </li>
+        {{/if}}
+
+        {{#if htModel.supportsLightedGrabBars}}
+          {{#ifCond 'group3'}}{{/ifCond}}
+          <li>
+            {{input type="checkbox" id="lightedGrabBars" checked=isLightedGrabBars}}
+            <label for="lightedGrabBars">
+              {{foundation-tooltip tool="Lighted Grab Bars" tip="<img src='/assets/images/tooltips/DYO_Option_IlluminatedGrabBar.jpg' />Provides additional support for safely entering and exiting your hot tub at night, as well as additional mood lighting for your Thermospas&reg; experience."}}
+            </label>
+          </li>
+        {{/if}}
+
+         {{#if htModel.supportsLighting}}
+          {{#ifCond 'group3'}}{{/ifCond}}
+          <li>
+            {{input type="checkbox" id="lighting" checked=isLighting}}
+            <label for="lighting">
+              {{foundation-tooltip tool="LED Lighting" tip="<img src='/assets/images/tooltips/DYO_Option_LEDLights.jpg' />Enhance your Thermospas&reg; experience with stunning and elegant lighting effects for romantic ambiance, entertaining guests, and for nighttime safety. Choose from 8 available colors, or slowly cycle through each color."}}
+            </label>
+          </li>
+        {{/if}}
+
+        {{#if htModel.supportsCrystalBall}}
+          {{#ifCond 'group3'}}{{/ifCond}}
+          <li>
+            {{input type="checkbox" id="crystalBall" checked=isCrystalBall}}
+            <label for="crystalBall">
+              {{foundation-tooltip tool="Crystal Ball" tip="<img src='/assets/images/tooltips/DYO_Option_CrystalBall.jpg' />Activated by a small water jet, this elegant spinning ball can be illuminated with a choice of 8 distinct colors creating a relaxing atmosphere for your spa experience."}}
+            </label>
+          </li>
+        {{/if}}
+
+        {{#if htModel.supportsCupHolder}}
+          {{#ifCond 'group3'}}{{/ifCond}}
+          <li>
+            {{input type="checkbox" id="cupHolder" checked=isCupHolder}}
+            <label for="cupHolder">
+              {{foundation-tooltip tool="Illuminated Cupholder" tip="<img src='/assets/images/tooltips/DYO_Option_CupHolder.jpg' />The convenient and fun custom molded cup holder illuminates your drink from below. Great for nighttime entertaining with friends and family."}}
+            </label>
+          </li>
+        {{/if}}
+
+        {{#if htModel.supportsOzonator}}
+          {{#ifCond 'group4'}}{{/ifCond}}
+          <li>
+            {{input type="checkbox" id="ozonator" checked=isOzonator}}
+            <label for="ozonator">
+              {{foundation-tooltip tool="Ozonators" tip="<img src='/assets/images/tooltips/DYO_Option_Ozonator.jpg' />Ozone is a natural purifier that instantly oxidizes unwanted bacteria, mold, spores, cysts, mildew and viruses up to 3,000 times more quickly than chlorine or bromine."}}
+            </label>
+          </li>
+        {{/if}}
+
+        {{#if htModel.supportsSteps}}
+          {{#ifCond 'group4'}}{{/ifCond}}
+          <li>
+            {{input type="checkbox" id="steps" checked=isSteps}}
+            <label for="steps">
+              {{foundation-tooltip tool="Steps" tip="<img src='/assets/images/tooltips/DYO_Option_Steps.jpg' />Thermospas&reg; is the only hot tub manufacturer that designs and customizes wrap around step packages to complete your perfect hot tub."}}
+            </label>
+          </li>
+        {{/if}}
+
+        {{#if htModel.supportsCoverLifter}}
+          {{#ifCond 'group4'}}{{/ifCond}}
+          <li>
+            {{input type="checkbox" id="coverLifter" checked=isCoverLifter}}
+            <label for="coverLifter">
+              {{foundation-tooltip tool="Cover Lifters" tip="<img src='/assets/images/tooltips/DYO_Option_CoverLifter.jpg' />Allows anyone to effortlessly remove and replace your ThermoSpas® cover simply and easily. Great for any age and those with physical difficulties."}}
+            </label>
+          </li>
+        {{/if}}
+
+
+      </ul>
+    </div>
+    {{partial 'stepNavOptions'}}
+  </div>
+
+  <div class="small-12 medium-9 columns hot-tub-feature">
+    <div class="row row-content">
+      <div class="small-12 medium-9 columns">
+        <div class='shell-cabinet-combo'>
+          <img {{bind-attr src=shellImageUrl}} alt='Shell Preview' class='scc-image scc-shell'>
+          <img {{bind-attr src=cabinetImageUrl}} alt='Cabinet Preview' class='scc-image scc-cabinet'>
+        </div>
+      </div>
+
+      {{render 'my-hot-tub' this}}
+      <p class='step-description'>Thermospas<sup>&reg;</sup> offers a comprehensive array of spa accessories and options to help turn your hot tub into a perfect at-home retreat, including jet and control options, entertainment and stereo options, stunning lighting options, and maintenance and convenience options.</p>
+    </div>
+  </div>
+</div>

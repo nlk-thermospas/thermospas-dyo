@@ -1,0 +1,15 @@
+<h2>Existing Hot Tubs</h2>
+
+<p>This exists for development purposes only.</p>
+
+<ul>
+  {{#each hotTub in controller}}
+    <li>
+      {{#link-to 'hotTub' hotTub}}
+        {{hotTub.customerName}} - {{hotTub.createdAt}}
+      {{/link-to}}
+    </li>
+  {{else}}
+    <li>No hot tubs configured</li>
+  {{/each}}
+</ul>

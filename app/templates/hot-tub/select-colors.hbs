@@ -1,0 +1,95 @@
+<div class="row step-header">
+  <div class="step">step3</div>
+  <div class="small-12 medium-9 columns">
+    {{#view 'top-nav'}}
+      {{partial 'building-nav'}}
+    {{/view}}
+  </div>
+</div>
+
+<div class="content-container">
+  <div class="left-nav colors">
+    <div class="content">
+      <h5>Select shell color:</h5>
+
+      <ul class="small-block-grid-2 color-grid button-nav">
+        {{#each shellColor in shellColors}}
+          <li>
+            <img {{bind-attr src=shellColor.previewImageUrl}} alt='Color Preview' class='color-preview'>
+            {{#view 'select-button'}}
+              {{#view 'shell-options-nav'}}
+                <button {{action 'selectShellColor' shellColor}} class="color round expand">
+                  {{shellColor.displayName}}
+                </button>
+              {{/view}}
+            {{/view}}
+          </li>
+        {{else}}
+          {{#each shellColor in allShellColors}}
+            <li>
+              <img {{bind-attr src=shellColor.previewImageUrl}} alt='Color Preview' class='color-preview'>
+
+              {{#view 'select-button'}}
+                {{#view 'shell-options-nav'}}
+                  <button {{action 'selectShellColor' shellColor}} class="color round expand">
+                    {{shellColor.displayName}}
+                  </button>
+                {{/view}}
+              {{/view}}
+            </li>
+          {{/each}}
+        {{/each}}
+      </ul>
+
+      <h5 class="second">Select cabinet color:</h5>
+
+      <ul class="small-block-grid-2 color-grid button-nav">
+        {{#each cabinetColor in cabinetColors}}
+          <li>
+            <img {{bind-attr src=cabinetColor.previewImageUrl}} alt='Color Preview' class='color-preview'>
+
+            {{#view 'select-button'}}
+              {{#view 'cabinet-options-nav'}}
+                <button {{action 'selectCabinetColor' cabinetColor}} class="color round expand">
+                  {{cabinetColor.displayName}}
+                </button>
+              {{/view}}
+            {{/view}}
+          </li>
+        {{else}}
+          <p>No cabinet colors available</p>
+        {{/each}}
+      </ul>
+    </div>
+
+    {{partial 'stepNavColors'}}
+  </div>
+
+  <div class="small-12 medium-9 columns hot-tub-feature">
+    <div class="row row-content">
+      <div class="small-12 medium-9 columns">
+        <div class='shell-cabinet-combo'>
+          {{#if shellColor}}
+            {{#if cabinetColor}}
+              <img {{bind-attr src=shellImageUrl}} alt='Shell Preview' class='scc-image scc-shell'>
+              <img {{bind-attr src=cabinetImageUrl}} alt='Cabinet Preview' class='scc-image scc-cabinet'>
+            {{else}}
+              <h3>Please select a cabinet color.</h3>
+            {{/if}}
+          {{else}}
+            {{#if cabinetColor}}
+              <h3>Please select a shell color.</h3>
+            {{else}}
+              <h3>Please select a shell and cabinet color.</h3>
+            {{/if}}
+          {{/if}}
+        </div>
+
+      </div>
+
+      {{render 'my-hot-tub' this}}
+      <p class='step-description'>Thermospas<sup>&reg;</sup> offers a wide variety of shell and cabinet color options to suit your own
+personal taste. Plus, shells are formed with the highest quality Continuous Cast Acrylic so they won’t scratch or fade over time. Cabinets are constructed with our exclusive ThermoBoard™ material.</p>
+    </div>
+  </div>
+</div>

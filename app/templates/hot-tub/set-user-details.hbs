@@ -1,0 +1,143 @@
+<div class="row step-header">
+  <div class="step">step5</div>
+  <div class="small-12 medium-9 columns">
+    {{#view 'top-nav'}}
+      {{partial 'building-nav'}}
+    {{/view}}
+  </div>
+</div>
+
+<div class="content-container">
+  {{#if thankYou}}
+    <div class="left-nav thank-you">
+      <div class="content">
+        <h5>Thank you!</h5>
+
+        <p>A ThermoSpas representative will contact you with your quote.</p>
+
+        <p>Click "next" to visualize your custom hot tub in your own backyard and share with friends!</p>
+      </div>
+
+      {{partial 'stepNavUserDetails'}}
+    </div>
+  {{else}}
+    <div class="left-nav">
+      <div class="content">
+        <h5>Request pricing, free DVD, brochure, and $1,000 coupon:</h5>
+
+        {{#view 'abide'}}
+          <form class="info" data-abide>
+            <fieldset>
+              <div class='name-field'>
+                {{input placeholder="Your Name (required)" value=customerName required=''}}
+                <small class="error">name is required</small>
+              </div>
+
+              <div class='address-field'>
+                {{input placeholder="Address" value=customerAddress}}
+              </div>
+
+              <div class='city-field'>
+                {{input placeholder="City" value=customerCity}}
+              </div>
+
+              <div class='state-field'>
+                <select name="state">
+                  <option value="">State</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+              </div>
+
+              <div class='zip-code-field'>
+                {{input placeholder="Zip (required)" value=customerZipCode required=''}}
+                <small class="error">zip code is required</small>
+              </div>
+
+              <div class='phone-field'>
+                {{input placeholder="Phone (required)" value=customerPhoneNumber required=''}}
+                <small class="error">phone is required</small>
+              </div>
+
+              <div class='email-field'>
+                {{input placeholder="Email (required)" type="email" value=customerEmail required=''}}
+                <small class="error">please provide a valid email</small>
+              </div>
+
+              <button {{action 'setUserDetails'}} class="button small round" type="submit">
+                Get My Quote!
+              </button>
+
+              <p class="fine-print">(in the next step, save &amp; share your customized hot
+                tub!)</p>
+            </fieldset>
+          </form>
+        {{/view}}
+      </div>
+
+      {{partial 'stepNavOnlyBack'}}
+    </div>
+  {{/if}}
+
+  <div class="small-12 medium-9 columns hot-tub-feature">
+    <div class="row row-content">
+      <div class="small-12 medium-9 columns">
+        <div class='shell-cabinet-combo'>
+          <img {{bind-attr src=shellImageUrl}} alt='Shell Preview' class='scc-image scc-shell'>
+          <img {{bind-attr src=cabinetImageUrl}} alt='Cabinet Preview' class='scc-image scc-cabinet'>
+        </div>
+      </div>
+
+      {{render 'my-hot-tub' this}}
+    </div>
+  </div>
+</div>

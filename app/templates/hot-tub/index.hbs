@@ -1,0 +1,31 @@
+<div class="row step-header">
+  <div class="small-12 medium-3 columns">
+    <h1>{{customerName}}'s Hot Tub</h1>
+  </div>
+
+  <div class="small-12 medium-9 columns">
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-3 columns">
+    <div class='left-nav'>
+      <div class="content">
+        <p>This is what folks will see when they select Finish or share their
+        hot tub.</p>
+
+        {{#link-to "hotTubs.create" class="button small"}}Build Your Own Hot Tub{{/link-to}}
+      </div>
+    </div>
+  </div>
+
+  <div class="small-12 medium-7 columns">
+    <div class='shell-cabinet-combo'>
+      <img {{bind-attr src=shellImageUrl}} alt='Shell Preview' class='scc-image scc-shell'>
+
+      <img {{bind-attr src=cabinetImageUrl}} alt='Cabinet Preview' class='scc-image scc-cabinet'>
+    </div>
+  </div>
+
+  {{render 'my-hot-tub' this}}
+</div>

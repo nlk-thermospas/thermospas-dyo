@@ -1,0 +1,16 @@
+<div class='sidebar-nav'>
+  <ul class="button-group">
+    <li class="left">
+      <button {{action 'previousStep'}} class="tiny button-left" onClick="ga('send', 'event', 'DYOTool', 'BackButton', 'Colors-Step3', 1);">
+        <span class="square">back</span><span class="triangle">▲</span>
+      </button>
+    </li>
+    <li class="right">
+      <a {{action 'nextStep'}} class="tiny button-right" onClick="ga('send', 'event', 'DYOTool', 'NextButton', 'Colors-Step3', 1);">
+        <span class="square">next</span><span class="triangle">▲</span>
+      </a>
+    </li>
+  </ul>
+
+  <button {{action 'startOver'}} class="start-over">start over</button>
+</div>

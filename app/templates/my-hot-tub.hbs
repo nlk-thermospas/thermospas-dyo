@@ -1,0 +1,130 @@
+<div class="small-12 medium-3 columns">
+  <div class='your-hot-tub'>
+    <h5 class='mht'>My Hot Tub...</h5>
+
+    <ul class='your-hot-tub-list'>
+      <li>
+        <h5>Model</h5>
+
+        <div class='yht-list-content'>
+          {{#if htModel}}
+            <h6>{{htModel.displayName}}</h6>
+          {{/if}}
+        </div>
+      </li>
+
+      <li>
+        <h5>Jets</h5>
+
+        <div class='yht-list-content'>
+          {{#if jetOption}}
+            <h6>
+              <span id='mht-jet-range' {{bind-attr class=jetOption.optionClass}}>{{jetOption.jetRange}}</span>
+              jets
+            </h6>
+          {{/if}}
+        </div>
+      </li>
+
+      <li>
+        <h5>Shell Color</h5>
+
+        <div class='yht-list-content'>
+          {{#if shellColor}}
+            <h6 id="mht-shell">{{shellColor.displayName}}</h6>
+          {{/if}}
+        </div>
+      </li>
+
+      <li>
+        <h5>Cabinet Color</h5>
+
+        <div class='yht-list-content'>
+          {{#if cabinetColor}}
+            <h6 id="mht-cabinet">{{cabinetColor.displayName}}</h6>
+          {{/if}}
+        </div>
+      </li>
+
+      <li>
+        <h5>Options</h5>
+
+        <div class='yht-list-content'>
+          <ul>
+            {{#if totalControlTherapy}}
+              <li>
+                <span>Total Control Therapy<sup>®</sup></span>
+              </li>
+            {{/if}}
+
+            {{#if iceBucket}}
+              <li>
+                <span>Ice Bucket</span>
+              </li>
+            {{/if}}
+
+            {{#if pillowJet}}
+              <li>
+                <span>Pillow Jet</span>
+              </li>
+            {{/if}}
+
+            {{#if crystalBall}}
+              <li>
+                <span>Crystal Ball</span>
+              </li>
+            {{/if}}
+
+            {{#if cupHolder}}
+              <li>
+                <span>Illuminated Cupholder</span>
+              </li>
+            {{/if}}
+
+            {{#if stainlessSteelJets}}
+              <li>
+                <span>Stainless Steel Jets</span>
+              </li>
+            {{/if}}
+
+            {{#if lighting}}
+              <li>
+                <span>LED Lighting</span>
+              </li>
+            {{/if}}
+
+            {{#if stereo}}
+              <li>
+                <span>Stereo</span>
+              </li>
+            {{/if}}
+
+            {{#if ozonator}}
+              <li>
+                <span>Ozonator</span>
+              </li>
+            {{/if}}
+
+            {{#if steps}}
+              <li>
+                <span>Steps</span>
+              </li>
+            {{/if}}
+
+            {{#if coverLifter}}
+              <li>
+                <span>Cover Lifter</span>
+              </li>
+            {{/if}}
+
+            {{#if lightedGrabBars}}
+              <li>
+                <span>Lighted Grab Bars</span>
+              </li>
+            {{/if}}
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
