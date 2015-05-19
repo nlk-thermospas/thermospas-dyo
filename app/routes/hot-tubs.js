@@ -1,9 +1,5 @@
 import Ember from 'ember';
 
-var HotTubsRoute = Ember.Route.extend({
-  model: function() {
-    return this.store.find('hotTub');
-  }
-});
+var HotTubsRoute = Ember.Route.extend();
 
 export default HotTubsRoute;
