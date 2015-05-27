@@ -175,7 +175,11 @@ var HotTubSelectOptionsController = Ember.ObjectController.extend({
     },
     nextStep: function() {
       var hotTub = this.get('model');
-      this.transitionToRoute('hotTub.setUserDetails', hotTub);
+      if (localStorage.getItem("display") === 'false') {
+        this.transitionToRoute('hotTub.personalize', hotTub);
+      } else {
+        this.transitionToRoute('hotTub.setUserDetails', hotTub);
+      }
     }
   }
 });

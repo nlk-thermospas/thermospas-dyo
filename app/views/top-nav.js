@@ -22,6 +22,11 @@ var TopNav = Ember.View.extend({
     if (stepIndex === 5) {
       Ember.$(navItems).addClass('disabled-nav-item');
     }
+
+    if (localStorage.getItem("display") === 'false') {
+      Ember.$(navItems[4]).remove();
+      Ember.$(navItems[5]).removeClass('step6').addClass('step5').find('span').text('5');
+    }
   }
 });
 
