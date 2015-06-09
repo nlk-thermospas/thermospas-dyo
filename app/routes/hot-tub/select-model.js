@@ -5,13 +5,6 @@ var HotTubSelectSizeRoute = Ember.Route.extend({
     return this.store.find('htModel');
   },
   setupController: function(controller, model, transition) {
-
-    if( typeof transition.queryParams.display != 'undefined') {
-      localStorage.setItem("display", transition.queryParams.display);
-    } else {
-      localStorage.removeItem("display");
-    }
-
     controller.set('model', model);
     controller.set('selectedModel', undefined);
     controller.set('selectedSize', undefined);
