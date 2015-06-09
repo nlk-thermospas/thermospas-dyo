@@ -28,6 +28,7 @@ From the command line, do the following:
 * Install Node dependencies: `npm install`
 * Install Ember CLI globally: `npm install -g ember-cli`
 * Install front-end dependencies: `bower install`
+* Copy `vagrant.yml.example` to `vagrant.yml` and set your synced folder protocol, default is rsync.
 
 ## Running / Development
 

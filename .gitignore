@@ -18,3 +18,4 @@ testem.log
 
 # vagrant
 .vagrant
+vagrant.yml
