@@ -6,7 +6,7 @@ var HotTubRoute = Ember.Route.extend({
   },
   actions: {
     startOver: function() {
-      this.transitionTo('hotTubs.create');
+      this.replaceWith('hotTubs.create');
     }
   }
 });

@@ -5,7 +5,7 @@ var HotTubsCreateRoute = Ember.Route.extend({
     var hotTub = this.store.createRecord('hotTub');
     hotTub.set('createdAt', new Date());
     hotTub.save();
-    this.transitionTo('hotTub.selectModel', hotTub);
+    this.replaceWith('hotTub.selectModel', hotTub);
   }
 });
 
