@@ -8,6 +8,7 @@ var HotTubCanvas = Ember.Component.extend({
   height: 648, // this is based on current hot tub images
   attributeBindings: ['width','height'],
   initCanvas: function() {
+    console.log('initCanvas');
     var canvas = this.__canvas = new fabric.Canvas('hot-tub-canvas');
     //var backgroundImageUrl = 'test';
     this.set('canvas', canvas);
