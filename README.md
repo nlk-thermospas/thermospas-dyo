@@ -17,7 +17,8 @@ You will need the following things properly installed on your computer before
 working on the application.
 
 * [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+* Node - use the version specified in `package.json`
+* Bower - `npm install -g bower`
 
 ## Installation
 
@@ -26,7 +27,7 @@ From the command line, do the following:
 * Clone the repository: `git clone git@github.com:acquirgy/thermospas-dyo.git`
 * Change into the new directory: `cd thermospas-dyo`
 * Install Node dependencies: `npm install`
-* Install Ember CLI globally: `npm install -g ember-cli`
+* Install Ember CLI globally: `pm install -g ember-cli@0.1.1`
 * Install front-end dependencies: `bower install`
 
 ## Running / Development
