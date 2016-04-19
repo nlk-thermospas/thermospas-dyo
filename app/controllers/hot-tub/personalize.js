@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from '../../config/environment';
 
 var HotTubPersonalizeController = Ember.ObjectController.extend({
   hasBackground: false,
@@ -40,7 +41,7 @@ var HotTubPersonalizeController = Ember.ObjectController.extend({
 
       Ember.$.ajax({
         type: 'POST',
-        url: '/api/upload-image',
+        url: config.dyoSupportLocation + '/api/upload-image',
         data: { image_data: image }
       }).done(function(response) {
         Ember.$('.share.spinner').hide();
