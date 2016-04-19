@@ -7,7 +7,7 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     contentSecurityPolicy: {
-      'connect-src': "'self' www.thermospas.com thermospas.com 67.21.112.126 dyo.thermospas.com 67.21.112.128 67.21.112.128:35729 *.firebaseio.com",
+      'connect-src': "'self' www.thermospas.com thermospas.com 67.21.112.126 dyo.thermospas.com 67.21.112.128 67.21.112.128:35729 *.firebaseio.com https://auth.firebase.com wss://*.firebaseio.com",
       'font-src': "'self' fonts.googleapis.com fonts.gstatic.com",
       'style-src': "'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval' 67.21.112.128:35729 google-analytics.com www.google-analytics.com",
