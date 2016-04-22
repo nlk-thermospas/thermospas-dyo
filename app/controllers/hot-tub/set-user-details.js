@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from '../../config/environment';
 
 var HotTubSetUserDetailsController = Ember.ObjectController.extend(Ember.Evented, {
   thankYou: false,
@@ -60,7 +61,7 @@ var HotTubSetUserDetailsController = Ember.ObjectController.extend(Ember.Evented
         Ember.$(navItems[5]).removeClass('disabled-nav-item');
 
         $.post(
-          'http://thermospas.com/store.php',
+          config.dyoSupportLocation + '/api/store',
           data,
           function() {}
         );

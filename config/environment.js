@@ -7,11 +7,11 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     contentSecurityPolicy: {
-      'connect-src': "'self' www.thermospas.com thermospas.com 67.21.112.126 dyo.thermospas.com 67.21.112.128 67.21.112.128:35729 *.firebaseio.com",
+      'connect-src': "'self' www.thermospas.com thermospas.com 67.21.112.126 dyo.thermospas.com 67.21.112.128 67.21.112.128:35729 *.firebaseio.com https://auth.firebase.com wss://*.firebaseio.com https://*.herokuapp.com http://localhost:4567",
       'font-src': "'self' fonts.googleapis.com fonts.gstatic.com",
       'style-src': "'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' 67.21.112.128:35729 google-analytics.com www.google-analytics.com",
-      'img-src': "'self' google-analytics.com www.google-analytics.com csscheckbox.com www.csscheckbox.com",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' 67.21.112.128:35729 google-analytics.com www.google-analytics.com http://*.addthis.com",
+      'img-src': "'self' google-analytics.com www.google-analytics.com csscheckbox.com www.csscheckbox.com http://res.cloudinary.com",
     },
     EmberENV: {
       FEATURES: {
@@ -34,6 +34,7 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.CLOUDINARY_NAME = '';
     ENV.CLOUDINARY_UPLOAD_PRESET = '';
+    ENV.dyoSupportLocation = 'http://localhost:4567';
   }
 
   if (environment === 'test') {
@@ -51,6 +52,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.CLOUDINARY_NAME = '';
     ENV.CLOUDINARY_UPLOAD_PRESET = '';
+    ENV.dyoSupportLocation = 'https://thermospas-dyo-support.herokuapp.com';
   }
 
   return ENV;

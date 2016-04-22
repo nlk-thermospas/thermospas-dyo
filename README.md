@@ -7,9 +7,10 @@ configure a hot tub and request a quote. It utilizes the following technologies:
   local development
 - [Foundation](http://foundation.zurb.com/) for front-end styles and minor JS
   features like tooltips and form validation
-- [Heroku](https://www.heroku.com/) for hosting the application
+- [Firebase](https://www.firebase.com/) for hosting the application
 
-The Heroku app lives here: [http://thermospas-dyo.herokuapp.com/](http://thermospas-dyo.herokuapp.com/)
+The app lives here:
+[https://shining-heat-2332.firebaseapp.com](https://shining-heat-2332.firebaseapp.com)
 
 ## Prerequisites
 
@@ -17,7 +18,8 @@ You will need the following things properly installed on your computer before
 working on the application.
 
 * [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+* Node - use the version specified in `package.json`
+* Bower - `npm install -g bower`
 
 ## Installation
 
@@ -26,7 +28,7 @@ From the command line, do the following:
 * Clone the repository: `git clone git@github.com:acquirgy/thermospas-dyo.git`
 * Change into the new directory: `cd thermospas-dyo`
 * Install Node dependencies: `npm install`
-* Install Ember CLI globally: `npm install -g ember-cli`
+* Install Ember CLI globally: `pm install -g ember-cli@0.1.1`
 * Install front-end dependencies: `bower install`
 
 ## Running / Development
@@ -65,23 +67,17 @@ details.
 
 ## Hosting
 
-The application can be hosted anywhere that can serve HTML, JS, and CSS. Build
-it using `ember build --environment production` and deploy the generated `dist`
-folder to wherever the application is to be hosted.
+The app is hosted on [Firebase](https://www.firebase.com).
 
 ## Deploying
 
-Deploying to Heroku happens with Git. In order to be authorized deploy, you need
-to be added to the project on Heroku.
+Deploy the app to Firebase by doing the following:
 
-Deploy the app to Heroku by doing the following:
+1. Install the Firebase Tools - `npm install -g firebase-tools`
+2. Run the deploy script - `sh scripts/deploy.sh
 
-1. Install the [Heroku toolbelt](https://toolbelt.heroku.com/)
-2. Add the Heroku Git remote: `git remote add heroku git@heroku.com:thermospas-dyo.git`
-3. Push the `master` branch to the Heroku remote: `git push heroku master`
-
-Once the deploy process is complete, the latest code on master from where you
-pushed from will be live.
+The deploy script builds the site and deploys it to Firebase. It uses
+whatever code is in your working branch.
 
 ## Assets
 
@@ -107,14 +103,9 @@ The Ember.js app is reliant upon a Ruby API built in Sinatra called
 enabling social sharing by uploading the canvas image to Cloudinary and creating
 an HTML page for the Cloudinary image that has og tags.
 
-Follow the README instructions to get the app working locally. The proxy
-location is set in `.ember-cli`. The port set for the proxy is the default port
-of Sinatra.
-
-On Heroku, the
-[buildpack](https://github.com/tonycoco/heroku-buildpack-ember-cli#api-proxy)
-uses the `API_URL` ENV variable for setting the location of the API. It uses the
-default prefix.
+Follow the README instructions to get the app working locally. The Ember
+app expects it to be running at http://localhost:4567, see
+`dyoSupportLocation` for the config.
 
 ## Further Reading / Useful Links
 
