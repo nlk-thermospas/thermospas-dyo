@@ -74,7 +74,7 @@ The app is hosted on [Firebase](https://www.firebase.com).
 Deploy the app to Firebase by doing the following:
 
 1. Install the Firebase Tools - `npm install -g firebase-tools`
-2. Run the deploy script - `sh scripts/deploy.sh
+2. Run the deploy script - `sh scripts/deploy.sh`
 
 The deploy script builds the site and deploys it to Firebase. It uses
 whatever code is in your working branch.
