@@ -7,7 +7,9 @@ var IndexRoute = Ember.Route.extend({
     } else {
       localStorage.removeItem("display");
     }
-    this.replaceWith('hotTubs.create');
+    //console.log(location.href + ' iref=> ' + transition.queryParams.iref);
+    //this.replaceWith('hotTubs.create');
+    this.transitionTo('hotTubs.create', {queryParams: {iref: transition.queryParams.iref}});
   }
 });
 

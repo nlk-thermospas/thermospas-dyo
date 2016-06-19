@@ -112,7 +112,8 @@
                 {{input placeholder="Email (required)" type="email" value=customerEmail required=''}}
                 <small class="error">please provide a valid email</small>
               </div>
-
+              {{input type="hidden" valueBinding="iRef" value=irefVal}}
+              {{iref}}
               <button {{action 'setUserDetails'}} class="button small round" type="submit">
                 Get My Quote!
               </button>

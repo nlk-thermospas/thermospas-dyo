@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import config from '../../config/environment';
 
+
 var HotTubSetUserDetailsController = Ember.ObjectController.extend(Ember.Evented, {
   thankYou: false,
   actions: {
@@ -21,7 +22,8 @@ var HotTubSetUserDetailsController = Ember.ObjectController.extend(Ember.Evented
       var shell = hotTub.get('shellColor').get('displayName');
       var cabinet = hotTub.get('cabinetColor').get('displayName');
       var options = '';
-
+      var irefvalue = hotTub.get('irefval');
+      
       if(hotTub.get('totalControlTherapy')) {options += 'Total Control Therapy, ';}
       if(hotTub.get('iceBucket')) {options += 'Ice Bucket, ';}
       if(hotTub.get('pillowJet')) {options += 'Pillow Jet, ';}
@@ -49,7 +51,8 @@ var HotTubSetUserDetailsController = Ember.ObjectController.extend(Ember.Evented
         "Jets": jets,
         "Shell": shell,
         "Cabinet": cabinet,
-        "Options": options
+        "Options": options,
+        "iref": irefvalue
       };
 
       if (name && zip && phone && email) {
