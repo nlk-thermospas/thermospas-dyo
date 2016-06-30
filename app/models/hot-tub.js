@@ -35,6 +35,7 @@ var HotTub = DS.Model.extend({
   lightedGrabBars: DS.attr('boolean', { default: false }),
   backgroundImageUrl: DS.attr('string'),
   cloudinaryPublicId: DS.attr('string'),
+  irefval: DS.attr('string'),
 
   imageUrl: function() {
     return this.get('htModel.defaultImageUrl');
