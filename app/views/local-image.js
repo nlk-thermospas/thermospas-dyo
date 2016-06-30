@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
+/* global ga */
+
 export default Ember.View.extend({
   tagName: 'input',
   name: 'file',

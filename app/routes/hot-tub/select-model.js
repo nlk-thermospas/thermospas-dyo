@@ -4,7 +4,7 @@ var HotTubSelectSizeRoute = Ember.Route.extend({
   model: function() {
     return this.store.find('htModel');
   },
-  setupController: function(controller, model, transition) {
+  setupController: function(controller, model) {
     controller.set('model', model);
     controller.set('selectedModel', undefined);
     controller.set('selectedSize', undefined);
