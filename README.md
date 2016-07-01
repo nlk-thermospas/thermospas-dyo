@@ -9,8 +9,10 @@ configure a hot tub and request a quote. It utilizes the following technologies:
   features like tooltips and form validation
 - [Firebase](https://www.firebase.com/) for hosting the application
 
-The app lives here:
-[https://shining-heat-2332.firebaseapp.com](https://shining-heat-2332.firebaseapp.com)
+The app has two environments:
+
+- Staging - for testing, uses the Production Firebase data store - [https://thermospas-dyo-staging.firebaseapp.com](https://thermospas-dyo-staging.firebaseapp.com)
+- Production - the live app - [https://shining-heat-2332.firebaseapp.com](https://shining-heat-2332.firebaseapp.com)
 
 ## Prerequisites
 
@@ -74,7 +76,10 @@ The app is hosted on [Firebase](https://www.firebase.com).
 Deploy the app to Firebase by doing the following:
 
 1. Install the Firebase Tools - `npm install -g firebase-tools`
-2. Run the deploy script - `sh scripts/deploy.sh`
+2. Login to Firebase - `firebase login`
+3. Run the deploy script:
+     - Staging: `sh scripts/deploy-staging.sh`
+     - Production: `sh scripts/deploy-production.sh`
 
 The deploy script builds the site and deploys it to Firebase. It uses
 whatever code is in your working branch.

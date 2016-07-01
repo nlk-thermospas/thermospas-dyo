@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "thermospas-dyo-staging",
+    "production": "shining-heat-2332"
+  }
+}
