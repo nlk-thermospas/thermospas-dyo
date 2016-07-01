@@ -289,6 +289,7 @@ HtModel.reopenClass({
       description: 'A highly flexible hot tub for low-impact exercise or deep therapy with an adjustable spa seat',
       peopleSupported: 6,
       jetOptions: [29, 30, 31, 32],
+      shellColors: [1, 2, 3, 4, 5],
       supportsTotalControlTherapy: true,
       supportsIceBucket: true,
       supportsPillowJet: true,

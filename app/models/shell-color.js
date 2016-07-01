@@ -44,6 +44,12 @@ ShellColor.reopenClass({
       name: 'ocean',
       displayName: 'Ocean Wave',
       previewImageUrl: '/assets/images/swatches/Swatches_OceanWave.jpg'
+    },
+    {
+      id: 6,
+      name: 'silver',
+      displayName: 'Silver Marble',
+      previewImageUrl: '/assets/images/swatches/Swatches_SilverMarble.jpg'
     }
   ]
 });
