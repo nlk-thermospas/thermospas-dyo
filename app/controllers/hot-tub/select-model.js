@@ -24,15 +24,12 @@ var HotTubSelectModelController = Ember.ArrayController.extend({
   actions: {
     selectSize: function(size) {
       this.set('selectedSize', parseInt(size));
-      var iref12 = this.get('needs');
-      //console.log(iref12);
-      //alert('Iref'+iref12);
     },
     selectModel: function(htModel) {
 
       var hotTub = this.get('hotTub').get('model');
       hotTub.set('htModel', htModel);
-      hotTub.save(); 
+      hotTub.save();
       // enabled the top nav progression on model select
       var navItems = Ember.$('.sub-nav').children();
       Ember.$(navItems[1]).removeClass('disabled-nav-item');

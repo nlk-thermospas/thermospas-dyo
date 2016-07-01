@@ -23,7 +23,7 @@ var HotTubSetUserDetailsController = Ember.ObjectController.extend(Ember.Evented
       var cabinet = hotTub.get('cabinetColor').get('displayName');
       var options = '';
       var irefvalue = hotTub.get('irefval');
-      
+
       if(hotTub.get('totalControlTherapy')) {options += 'Total Control Therapy, ';}
       if(hotTub.get('iceBucket')) {options += 'Ice Bucket, ';}
       if(hotTub.get('pillowJet')) {options += 'Pillow Jet, ';}
